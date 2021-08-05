@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width", initial-scale="1.0">
+<html>
+    <head>
+        <title>index.html - Webpage Architect IDE</title>
+        <link href="icon.png" type="type/png" rel="icon">
+        <link href="css/style.css" rel='stylesheet'>
+        <link id="basic-style" href="css/kaklat-1.0-special.css" rel="stylesheet">
+        <link href="css/user_content.css" rel="stylesheet">
+        <link href="css/merake-layout.css" rel="stylesheet">
+        <link href="font/Kaklat Icon/style.css" rel="stylesheet">
+        <link href="font/Fira_Code_v5.2/fira_code.css" rel="stylesheet">
+        <!--script src="main/code.js"></script>
+        <script src="main/iframe.js"></script>
+        <script src="main/tool_hub.js"></script>
+        <script src="main/element_hub.js"></script>
+        <script src="main/action_hub.js"></script>
+        <-- Library -->
+        <!--script src="basic.js"></script>
+        <script src="lib/behavejs/behave.js"></script>
+        <script src="lib/pickr/pickr.min.js"></script-->
+        <link href="lib/pickr/monolith.min.css" rel="stylesheet">
+        <link href="font/IBM Plex Sans/css/ibm-plex.min.css" rel="stylesheet">
+        <script>/*
+            try {
+                var electronRequire = global.require;
+            } catch(err) { console.error(err) }*/
+        </script>
+    </head>
+    <body>
+        <div class="k-actionbar">
+            <p class="actiontitle">A: Webpage</p>
+            <div id="main-info">
+                <p id="machine-name"></p>
+            </div>
+            <div id="error-info">
+                <svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Alert Circle</title><path d='M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm0 319.91a20 20 0 1120-20 20 20 0 01-20 20zm21.72-201.15l-5.74 122a16 16 0 01-32 0l-5.74-121.94v-.05a21.74 21.74 0 1143.44 0z'/></svg>
+                <p id="error-info-text"></p>
+            </div>
+        </div>
+        <div id="workspace" class="workspace">
+            <div class="m-layout m-top"></div>
+            <div id="workspace-middle" class="m-layout m-middle m-layout-full">
+                <!-- File bar left -->
+                <div class="m-fragment m-fragment-left m-fragment-layout-horizontal sidebar sidebar-left">
+                    <div class="sidebar-tab-bar">
+                        <i class="ki-drag-area"></i>
+                        <button class="sidebar-tab" selected='true'><i class="ki-file"></i></button>
+                        <button class="sidebar-tab" selected='false'><i class="ki-font"></i></button>
+                    </div>
+                    <div class="m-layout m-layout-column m-layout-full sidebar-stacks-container">
+                        <div class="sidebar-stack project-directory">
+                            <div class="sidebar-stack-title">
+                                <i class="ki-chevron-up"></i>
+                                <p>Project Directory</p>
+                            </div>
+                            <div class="sidebar-content">
+                                <div class="project-directory-item">
+                                    <p>index.html</p>
+                                </div>
+                                <div class="project-directory-item">
+                                    <p>index.html</p>
+                                    <div class="project-directory-item">
+                                        <p>style.css</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--div current-tab="1" merake-id="project-1" class="m-fragment m-fragment-layout m-fragment-right m-fragment-full project-view">
+                    <div class="m-layout m-layout-column m-top project-toolbar">
+                        <div class="m-fragment m-fragment-full project-tab-bar">
+                            <button class="project-tab" selected='true'>index.html</button>
+                            <button class="project-tab-add">+</button>
+                        </div>
+                        <div class="m-fragment m-fragment-full project-actionbar" id="tab-1">
+                            <button>View design</button>
+                            <button>Add tab (TEST)</button>
+                        </div>
+                    </div>
+                    <div class="m-layout m-layout-full m-middle project-code">
+                        <div class="m-fragment m-fragment-full html-design" style="display: none;">
+                            <p>Design</p>
+                        </div>
+                        <!- Don't delete code-editor, forever!->
+                        <div class="m-fragment m-fragment-full code-editor">
+                            <!-For monaco editor ->
+                        </div>
+                    </div>
+                    <div class="m-layout m-bottom">
+                        <!- Project view's bottom panel ->
+                        <div class="m-fragment m-fragment-full sidebar sidebar-bottom">
+
+                        </div>
+                    </div>
+                </div-->
+            </div>
+            <div class="m-layout m-bottom"></div>
+        </div>
+        <div class="infobar">
+            <p>Design</p>
+        </div>
+        <!-- welcome screen -->
+        <div id='welcome-screen-bg'>
+            <div id='welcome-screen'>
+                <div id='welcome-screen-sidebar'>
+                    <p id='welcome-screen-sidebar-title'>Choose template</p>
+                    <button class='welcome-screen-sidebar-item' id='welcome-screen-sidebar-blank-project' onclick="architect.newProject('blank')">
+                        Blank project
+                    </button>
+                    <button class='welcome-screen-sidebar-item' id='welcome-screen-sidebar-organic-design'>
+                        Blog website
+                    </button>
+                    <button class='welcome-screen-sidebar-item' id='welcome-screen-sidebar-organic-design'>
+                        Create native app with electron
+                    </button>
+                </div>
+                <div id='welcome-screen-wrapper'>
+                    <p id='welcome-screen-title'>Welcome!</p>
+                    <div id='welcome-screen-description'>
+                        <p><mark>First time using Webarchitect?</mark> Click the type of project you want to create on the left. If you want to load current existing project, click the "Load project" below.</p>
+                    </div>
+                    <div id='welcome-screen-control'>
+                        <button>Load project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="lib/monaco-editor/min/vs/loader.js"></script>
+        <script type="module" src="js/renderer/code.js"></script>
+        <!-- If javascript is not enabled -->
+        <noscript id='nojs'>
+            <img src="Warning Logo.png">
+            <p id='nojs-title'>Oops, Something went wrong!</p>
+            <p>It's look like javascript is disabled. It's not your mistake. This may happen if there are internal errors in this app. Please contact <a href='mailto:sipaw3hee@gmail.com'>sipaw3hee@gmail.com</a> regarding this problem</p>
+        </noscript>
+    </body>
+</html>

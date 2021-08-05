@@ -1,0 +1,25 @@
+.m-layout {
+  display: flex;
+  width: 100%;
+}
+
+.m-fragment-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-fragment-layout-horizontal {
+  display: flex;
+}
+
+.m-layout-full {
+  height: 100%;
+}
+
+.m-layout-column {
+  flex-direction: column;
+}
+
+.m-fragment-full {
+  width: 100%;
+}/*# sourceMappingURL=merake-layout.css.map */

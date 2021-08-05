@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width", initial-scale="1.0">
+<html>
+    <head>
+        <title>index.html - Webpage Architect IDE</title>
+        <link href="icon.png" type="type/png" rel="icon">
+        <link href="style.css" rel='stylesheet'>
+        <link id="basic-style" href="kaklat-1.0-special.css" rel="stylesheet">
+        <link href="user_content.css" rel="stylesheet">
+        <script src="main/code.js"></script>
+        <script src="main/iframe.js"></script>
+        <script src="main/tool_hub.js"></script>
+        <script src="main/element_hub.js"></script>
+        <script src="main/action_hub.js"></script>
+        <!-- Library -->
+        <script src="basic.js"></script>
+        <script src="lib/behavejs/behave.js"></script>
+        <script src="lib/pickr/pickr.min.js"></script>
+        <link href="lib/pickr/monolith.min.css" rel="stylesheet">
+        <link href="font/Clear-Sans-Webfont-1.1.1/css/clear-sans.css" rel="stylesheet">
+        
+    </head>
+    <body onload="onLoad()">
+        <div class="k-actionbar">
+            <img src="icon.png" id="warch-logo">
+            <p class="actiontitle">Webpage</p>
+            <div id="main-info">
+                <p><%= host %></p>
+            </div>
+            <div id="error-info">
+                <svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Alert Circle</title><path d='M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm0 319.91a20 20 0 1120-20 20 20 0 01-20 20zm21.72-201.15l-5.74 122a16 16 0 01-32 0l-5.74-121.94v-.05a21.74 21.74 0 1143.44 0z'/></svg>
+                <p id="error-info-text"></p>
+            </div>
+        </div>
+        <!-- welcome screen -->
+        <div id='welcome-screen-bg'>
+            <div id='welcome-screen'>
+                <div id='welcome-screen-sidebar'>
+                    <p id='welcome-screen-sidebar-title'>Choose template</p>
+                    <button class='welcome-screen-sidebar-item' id='welcome-screen-sidebar-blank-project' onclick="architect.newProject('blank')">
+                        Blank project
+                    </button>
+                    <button class='welcome-screen-sidebar-item' id='welcome-screen-sidebar-organic-design'>
+                        Blog website
+                    </button>
+                    <button class='welcome-screen-sidebar-item' id='welcome-screen-sidebar-organic-design'>
+                        Create native app with electron
+                    </button>
+                </div>
+                <div id='welcome-screen-wrapper'>
+                    <p id='welcome-screen-title'>Welcome!</p>
+                    <div id='welcome-screen-description'>
+                        <p><mark>First time using Webarchitect?</mark> Click the type of project you want to create on the left. If you want to load current existing project, click the "Load project" below.</p>
+                    </div>
+                    <div id='welcome-screen-control'>
+                        <button>Load project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="html-design">
+            <!-- Element Tab, in left  -->
+            <div id='element_hub-tab-container'>
+                <div class='element_hub-tab' id='typo-tab' onclick="element_hub.setTab(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="32" height="32" preserveAspectRatio="xMinYMin" class="icon__icon"><path d="M12,1 L12,3 C12,3.55228475 11.5522847,4 11,4 C10.4477153,4 10,3.55228475 10,3 L10,2 L7,2 L7,10 L8,10 C8.55228475,10 9,10.4477153 9,11 C9,11.5522847 8.55228475,12 8,12 L4,12 C3.44771525,12 3,11.5522847 3,11 C3,10.4477153 3.44771525,10 4,10 L5,10 L5,2 L2,2 L2,3 C2,3.55228475 1.55228475,4 1,4 C0.44771525,4 0,3.55228475 0,3 L0,1 C0,0.44771525 0.44771525,0 1,0 L11,0 C11.5522847,0 12,0.44771525 12,1 Z"></path></svg>
+                </div>
+                <div class='element_hub-tab' id='shape-tab' value='false'  onclick="element_hub.setTab(this)">
+                    <svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Shapes</title><path fill='none' stroke='currentColor' stroke-linejoin='round' stroke-width='32' d='M336 320H32L184 48l152 272zM265.32 194.51A144 144 0 11192 320'/></svg>
+                </div>
+            </div>
+            <!-- Element Page, in left -->
+            <div id='element_hub' class="inspector">
+                <!-- Typography -->
+                <div class='inspector-page' id='element_hub-typo-page'>
+                    <div id="element_hub-typo-heading" class='inspector-heading'>
+                        <p>Typography</p>
+                    </div>
+                    <p class="inspector-section-title">Word</p>
+                    <div class="inspector-list">
+                        <button class="inspector-list-content list-draggable" id="element_hub-add-p" draggable="true" ondragstart="dragAndDrop.drag(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="32" height="32" preserveAspectRatio="xMinYMin" class="icon__icon"><path d="M12,1 L12,3 C12,3.55228475 11.5522847,4 11,4 C10.4477153,4 10,3.55228475 10,3 L10,2 L7,2 L7,10 L8,10 C8.55228475,10 9,10.4477153 9,11 C9,11.5522847 8.55228475,12 8,12 L4,12 C3.44771525,12 3,11.5522847 3,11 C3,10.4477153 3.44771525,10 4,10 L5,10 L5,2 L2,2 L2,3 C2,3.55228475 1.55228475,4 1,4 C0.44771525,4 0,3.55228475 0,3 L0,1 C0,0.44771525 0.44771525,0 1,0 L11,0 C11.5522847,0 12,0.44771525 12,1 Z"></path></svg>
+                            Paragraph
+                        </button>
+                        <button class="inspector-list-content list-draggable" id="element_hub-add-p" draggable="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="32" height="32" preserveAspectRatio="xMinYMin" class="icon__icon"><path d="M12,1 L12,3 C12,3.55228475 11.5522847,4 11,4 C10.4477153,4 10,3.55228475 10,3 L10,2 L7,2 L7,10 L8,10 C8.55228475,10 9,10.4477153 9,11 C9,11.5522847 8.55228475,12 8,12 L4,12 C3.44771525,12 3,11.5522847 3,11 C3,10.4477153 3.44771525,10 4,10 L5,10 L5,2 L2,2 L2,3 C2,3.55228475 1.55228475,4 1,4 C0.44771525,4 0,3.55228475 0,3 L0,1 C0,0.44771525 0.44771525,0 1,0 L11,0 C11.5522847,0 12,0.44771525 12,1 Z"></path></svg>
+                            Paragraph
+                        </button>
+                        <button class="inspector-list-content list-draggable" id="element_hub-add-p" draggable="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="32" height="32" preserveAspectRatio="xMinYMin" class="icon__icon"><path d="M12,1 L12,3 C12,3.55228475 11.5522847,4 11,4 C10.4477153,4 10,3.55228475 10,3 L10,2 L7,2 L7,10 L8,10 C8.55228475,10 9,10.4477153 9,11 C9,11.5522847 8.55228475,12 8,12 L4,12 C3.44771525,12 3,11.5522847 3,11 C3,10.4477153 3.44771525,10 4,10 L5,10 L5,2 L2,2 L2,3 C2,3.55228475 1.55228475,4 1,4 C0.44771525,4 0,3.55228475 0,3 L0,1 C0,0.44771525 0.44771525,0 1,0 L11,0 C11.5522847,0 12,0.44771525 12,1 Z"></path></svg>
+                            Paragraph
+                        </button>
+                    </div>
+                </div>
+                <!-- Shape -->
+                <div class='inspector-page' id='element_hub-shape-page' style="display: none;">
+                    <div id="element_hub-shape-heading" class='inspector-heading'>
+                        <p>Shape</p>
+                    </div>
+                    <p class="inspector-section-title">Word</p>
+                    <div class="inspector-list">
+                        <button class="inspector-list-content" id="element_hub-add-p" >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="32" height="32" preserveAspectRatio="xMinYMin" class="icon__icon"><path d="M12,1 L12,3 C12,3.55228475 11.5522847,4 11,4 C10.4477153,4 10,3.55228475 10,3 L10,2 L7,2 L7,10 L8,10 C8.55228475,10 9,10.4477153 9,11 C9,11.5522847 8.55228475,12 8,12 L4,12 C3.44771525,12 3,11.5522847 3,11 C3,10.4477153 3.44771525,10 4,10 L5,10 L5,2 L2,2 L2,3 C2,3.55228475 1.55228475,4 1,4 C0.44771525,4 0,3.55228475 0,3 L0,1 C0,0.44771525 0.44771525,0 1,0 L11,0 C11.5522847,0 12,0.44771525 12,1 Z"></path></svg>
+                            Paragraph
+                        </button>
+                        <button class="inspector-list-content" id="element_hub-add-p" ondragstart="dragAndDrop.drag(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="32" height="32" preserveAspectRatio="xMinYMin" class="icon__icon"><path d="M12,1 L12,3 C12,3.55228475 11.5522847,4 11,4 C10.4477153,4 10,3.55228475 10,3 L10,2 L7,2 L7,10 L8,10 C8.55228475,10 9,10.4477153 9,11 C9,11.5522847 8.55228475,12 8,12 L4,12 C3.44771525,12 3,11.5522847 3,11 C3,10.4477153 3.44771525,10 4,10 L5,10 L5,2 L2,2 L2,3 C2,3.55228475 1.55228475,4 1,4 C0.44771525,4 0,3.55228475 0,3 L0,1 C0,0.44771525 0.44771525,0 1,0 L11,0 C11.5522847,0 12,0.44771525 12,1 Z"></path></svg>
+                            Paragraph
+                        </button>
+                        <button class="inspector-list-content" id="element_hub-add-p" ondragstart="dragAndDrop.drag(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="32" height="32" preserveAspectRatio="xMinYMin" class="icon__icon"><path d="M12,1 L12,3 C12,3.55228475 11.5522847,4 11,4 C10.4477153,4 10,3.55228475 10,3 L10,2 L7,2 L7,10 L8,10 C8.55228475,10 9,10.4477153 9,11 C9,11.5522847 8.55228475,12 8,12 L4,12 C3.44771525,12 3,11.5522847 3,11 C3,10.4477153 3.44771525,10 4,10 L5,10 L5,2 L2,2 L2,3 C2,3.55228475 1.55228475,4 1,4 C0.44771525,4 0,3.55228475 0,3 L0,1 C0,0.44771525 0.44771525,0 1,0 L11,0 C11.5522847,0 12,0.44771525 12,1 Z"></path></svg>
+                            Paragraph
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Element drag, in left -->
+            <div id='element_hub-drag'></div>
+            <!-- Workspace, in center -->
+            <div id='workspace'>
+                <!-- Toolbar for styling text -->
+                <div id='workspace-toolbar'> <!-- Also called action-hub -->
+                    <button id='toolbar-bold'><svg viewBox="0 0 21 24" xmlns="http://www.w3.org/2000/svg"><path d="m21.22 7.091c-.005-3.915-3.178-7.087-7.093-7.091h-11.946c-1.205 0-2.182.977-2.182 2.182s.977 2.182 2.182 2.182h.927v15.272h-.927c-1.205 0-2.182.977-2.182 2.182s.977 2.182 2.182 2.182h11.946.003c3.914 0 7.087-3.173 7.087-7.087 0-1.908-.754-3.64-1.981-4.915l.002.002c1.226-1.269 1.981-3 1.981-4.906 0-.001 0-.002 0-.003zm-7.09 2.727h-6.657v-5.455h6.655c1.506 0 2.727 1.221 2.727 2.727s-1.221 2.727-2.727 2.727zm0 9.818h-6.657v-5.454h6.655c1.506 0 2.727 1.221 2.727 2.727s-1.221 2.727-2.727 2.727z"/></svg></button>
+                    <button id='toolbar-italic'><svg viewBox="0 0 15 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.182 0h-8.728c-.009 0-.02 0-.031 0-.603 0-1.091.489-1.091 1.091s.489 1.091 1.091 1.091h.032-.002 3.033l-3.927 19.637h-3.469c-.009 0-.02 0-.031 0-.603 0-1.091.489-1.091 1.091s.489 1.091 1.091 1.091h.032-.002 8.727c.589-.017 1.061-.499 1.061-1.091s-.471-1.074-1.059-1.091h-.002-3.033l3.927-19.637h3.469c.589-.017 1.061-.499 1.061-1.091s-.471-1.074-1.059-1.091h-.002z"/></svg></button>
+                    <button id='toolbar-underline'><svg viewBox="0 0 15 24" xmlns="http://www.w3.org/2000/svg"><path d="m14 0c-.663 0-1.2.537-1.2 1.2v10.399c0 2.872-2.328 5.2-5.2 5.2s-5.2-2.328-5.2-5.2v-10.399c-.019-.648-.549-1.167-1.2-1.167s-1.181.518-1.2 1.165v.002 10.399c0 4.197 3.403 7.6 7.6 7.6s7.6-3.403 7.6-7.6v-10.399c0-.663-.537-1.2-1.199-1.2z"/><path d="m14 21.6h-12.8c-.648.019-1.167.549-1.167 1.2s.518 1.181 1.165 1.2h.002 12.8c.648-.019 1.167-.549 1.167-1.2s-.518-1.181-1.165-1.2z"/></svg></button>
+                    <button id='toolbar-strikethrough'><svg viewBox="0 0 27 24" xmlns="http://www.w3.org/2000/svg"><path d="m26.068 10.759h-15.103c-2.285 0-4.138-1.853-4.138-4.138s1.853-4.138 4.138-4.138h10.759c.671-.019 1.207-.568 1.207-1.241s-.536-1.222-1.205-1.241h-.002-10.759c-3.656.001-6.619 2.964-6.619 6.62 0 1.572.548 3.016 1.463 4.151l-.01-.013h-4.558c-.01 0-.023 0-.035 0-.686 0-1.242.556-1.242 1.242s.556 1.242 1.242 1.242c.012 0 .024 0 .037-.001h-.002 15.108c2.285 0 4.138 1.853 4.138 4.138s-1.853 4.138-4.138 4.138h-10.764c-.671.019-1.207.568-1.207 1.241s.536 1.222 1.205 1.241h.002 10.759.009c3.654 0 6.615-2.962 6.615-6.615 0-1.574-.55-3.02-1.468-4.156l.01.013h4.562.035c.686 0 1.242-.556 1.242-1.242s-.556-1.242-1.242-1.242c-.012 0-.024 0-.037.001h.002z"/></svg></button>
+                    <div id='workspace-toolbar-textcolor'>
+                        <svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Text</title><path d='M292.6 407.78l-120-320a22 22 0 00-41.2 0l-120 320a22 22 0 0041.2 15.44l36.16-96.42a2 2 0 011.87-1.3h122.74a2 2 0 011.87 1.3l36.16 96.42a22 22 0 0041.2-15.44zm-185.84-129l43.37-115.65a2 2 0 013.74 0l43.37 115.67a2 2 0 01-1.87 2.7h-86.74a2 2 0 01-1.87-2.7zM400.77 169.5c-41.72-.3-79.08 23.87-95 61.4a22 22 0 0040.5 17.2c8.88-20.89 29.77-34.44 53.32-34.6 32.32-.22 58.41 26.5 58.41 58.85a1.5 1.5 0 01-1.45 1.5c-21.92.61-47.92 2.07-71.12 4.8-54.75 6.44-87.43 36.29-87.43 79.85 0 23.19 8.76 44 24.67 58.68C337.6 430.93 358 438.5 380 438.5c31 0 57.69-8 77.94-23.22h.06a22 22 0 1044 .19v-143c0-56.18-45-102.56-101.23-102.97zM380 394.5c-17.53 0-38-9.43-38-36 0-10.67 3.83-18.14 12.43-24.23 8.37-5.93 21.2-10.16 36.14-11.92 21.12-2.49 44.82-3.86 65.14-4.47a2 2 0 012 2.1C455 370.1 429.46 394.5 380 394.5z'/></svg>
+                        <button class='inspector-color-circle' id='textcolor-black' style="background-color:rgb(0, 0, 0);"></button>
+                        <button class='inspector-color-circle' id='textcolor-gray' style="background-color:rgb(128, 128, 128);"></button>
+                        <button class='inspector-color-circle' id='textcolor-white' style="background-color:rgb(255, 255, 255);"></button>
+                        <button class='inspector-color-circle' id='textcolor-teal' style="background-color:rgb(0, 128, 128);"></button>
+                        <button class='inspector-color-circle' id='textcolor-blue' style="background-color:rgb(0, 0, 255);"></button>
+                        <button class='inspector-color-circle' id='textcolor-red' style="background-color:rgb(255, 69, 0);"></button>
+                        <button class='inspector-color-circle' id='textcolor-cyan' style="background-color:rgb(0, 255, 255);"></button>
+                        <button class='inspector-color-circle' id='textcolor-lightgreen' style="background-color:rgb(127, 255, 0);"></button>
+                        <button class='inspector-color-circle' id='textcolor-yellow' style="background-color:rgb(255, 255, 0);"></button>
+                        <button class='inspector-color-circle' id='textcolor-custom' style="background-color: rgb(255, 0, 0);">
+                    </div>
+                </div>
+                <!-- User generated content -->
+                <div id='workspace-user-content' onclick="userContent.workspaceClicked()">
+                    <iframe id="user-content" src="./example/bootstrap_actionbar.html"></iframe>
+                </div>
+            </div>
+            <!-- Tool Drag, in right -->
+            <div id='tool_hub-drag'></div>
+            <!-- Tool Page, in right -->
+            <div id='tool_hub' class='inspector'>
+                <div class='inspector-heading'>
+                    <p>Design</p>
+                </div>
+                <div class='inspector-page' id='tool_hub-design-page'>
+                    <!-- Design -->
+                    <p class='inspector-section-title'>Text Color</p>
+                    <div class='inspector-grid' id='tool_hub-textcolor-grid'>          
+                        
+                    </div>
+                    <p class='inspector-section-title'>Background Color</p>
+                    <div class='inspector-grid' id='tool_hub-bgcolor-grid'>          
+                        <button class='inspector-color-circle' id='bgcolor-black' style="background-color:rgb(0, 0, 0);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-gray' style="background-color:rgb(128, 128, 128);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-white' style="background-color:rgb(255, 255, 255);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-teal' style="background-color:rgb(0, 128, 128);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-blue' style="background-color:rgb(0, 0, 255);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-red' style="background-color:rgb(255, 69, 0);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-cyan' style="background-color:rgb(0, 255, 255);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-lightgreen' style="background-color:rgb(127, 255, 0);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-yellow' style="background-color:rgb(255, 255, 0);"></button>
+                        <button class='inspector-color-circle' id='bgcolor-custom' style="background-color: rgb(255, 0, 0);">
+                    </div>
+                    <div class='inspector-item'>          
+                        <label for='wd-color'>Color</label>
+                        <input name='wd-color' type="color">
+                    </div>
+                </div>
+            </div>
+            <!-- Tool tab, in right -->
+            <div id='tool_hub-tab-container'>
+                <div class='inspector-tab' id='design-tab'>
+                    <p>Design</p>
+                </div>
+                <div class='inspector-tab' id='action-tab' value='false'>
+                    <p>Action</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="infobar">
+            <p>Design</p>
+        </div>
+        <!-- If javascript is not enabled -->
+        <noscript id='nojs'>
+            <img src="Warning Logo.png">
+            <p id='nojs-title'>Oops, Something went wrong!</p>
+            <p>It's look like javascript is disabled. It's not your mistake. This may happen if there are internal errors in this app. Please contact <a href='mailto:sipaw3hee@gmail.com'>sipaw3hee@gmail.com</a> regarding this problem</p>
+        </noscript>
+    </body>
+</html>

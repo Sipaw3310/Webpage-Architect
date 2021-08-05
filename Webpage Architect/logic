@@ -1,0 +1,19 @@
+inspector-cn-wd = container for inspector items
+
+light-gray = #f9f9f9
+gray = #efefef
+
+border > light = #BDBDBD
+accent = #26A69A
+===== Element =====
+<#welcome-screen-bg>
+    <#welcome-screen>    < Welcome screen page
+</>
+
+====== Class Definition ======
+Every user content element must have "user-content" class
+> format edit-<element>
+- paragraph (p) < using textarea
+- image (img)
+
+
