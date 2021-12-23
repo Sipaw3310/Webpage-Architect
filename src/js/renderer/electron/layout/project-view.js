@@ -21,7 +21,7 @@ function createInstance(elem) {
     projectView.classList.add('m-fragment', 'm-fragment-layout', 'm-fragment-right', 'm-fragment-full', 'project-view');
     projectToolbar.classList.add('m-layout', 'm-layout-column', 'm-top', 'project-toolbar');
     projectCode.classList.add('m-layout', 'm-layout-full', 'm-middle', 'project-code');
-    // Assign required attribute to childe elements
+    // Assign required attribute to child elements
     projectTabBar.classList.add('m-fragment', 'm-fragment-full', 'project-tab-bar');
     projectTabAddButton.classList.add('project-tab-add');
     projectTabAddButton.innerText = '+';
@@ -84,6 +84,7 @@ function hasAddedToDOM() {
 }
 let ProjectViewManager = {
     createInstance,
-    hasAddedToDOM
+    hasAddedToDOM,
+    addTab
 }
 export { ProjectViewManager }

@@ -28,6 +28,7 @@
         </script>
     </head>
     <body>
+        <!-- Top bar, used for placing project actions -->
         <div class="k-actionbar">
             <p class="actiontitle">A: Webpage</p>
             <div id="main-info">
@@ -38,6 +39,7 @@
                 <p id="error-info-text"></p>
             </div>
         </div>
+        <!-- Main content -->
         <div id="workspace" class="workspace">
             <div class="m-layout m-top"></div>
             <div id="workspace-middle" class="m-layout m-middle m-layout-full">
@@ -98,6 +100,7 @@
             </div>
             <div class="m-layout m-bottom"></div>
         </div>
+        <!-- Bottom bar, used for displaying information -->
         <div class="infobar">
             <p>Design</p>
         </div>
@@ -119,7 +122,7 @@
                 <div id='welcome-screen-wrapper'>
                     <p id='welcome-screen-title'>Welcome!</p>
                     <div id='welcome-screen-description'>
-                        <p><mark>First time using Webarchitect?</mark> Click the type of project you want to create on the left. If you want to load current existing project, click the "Load project" below.</p>
+                        <p><mark>First time using Webarchitect?</mark> Click the type of project you want to create on the left. If you want to load current existing project, click the "Load project" button below.</p>
                     </div>
                     <div id='welcome-screen-control'>
                         <button>Load project</button>
@@ -128,12 +131,12 @@
             </div>
         </div>
         <script src="lib/monaco-editor/min/vs/loader.js"></script>
-        <script type="module" src="js/renderer/code.js"></script>
+        <script type="module" src="js/renderer/electron/main.js"></script>
         <!-- If javascript is not enabled -->
         <noscript id='nojs'>
             <img src="Warning Logo.png">
             <p id='nojs-title'>Oops, Something went wrong!</p>
-            <p>It's look like javascript is disabled. It's not your mistake. This may happen if there are internal errors in this app. Please contact <a href='mailto:sipaw3hee@gmail.com'>sipaw3hee@gmail.com</a> regarding this problem</p>
+            <p>It's look like javascript is disabled. It's not your mistake. This may happen if there are internal errors in this app.</p>
         </noscript>
     </body>
 </html>

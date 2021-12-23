@@ -1,3 +1,5 @@
 function onHTMLTabCreated() {
     
 }
+
+export { onHTMLTabCreated }
